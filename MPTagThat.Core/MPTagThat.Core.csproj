@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{329DC657-B4D5-4324-AA0D-4B77B6F72D8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPTagThat.Core</RootNamespace>
+    <AssemblyName>MPTagThat.Core</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bass.Net, Version=2.4.4.3, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\Bass.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="BassRegistration, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\BassRegistration.dll</HintPath>
+    </Reference>
+    <Reference Include="CSScriptLibrary, Version=1.9.0.0, Culture=neutral, PublicKeyToken=70fcc3d18c749033">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Elegant.Ui.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\Elegant.Ui.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Shell32, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\Interop.Shell32.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPTagThat.Base\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Services\ActionHandler\Button.cs" />
+    <Compile Include="Services\ActionHandler\IActionHandler.cs" />
+    <Compile Include="Services\ActionHandler\WindowMap.cs" />
+    <Compile Include="Amazon\AmazonAlbum.cs" />
+    <Compile Include="Amazon\AmazonAlbumInfo.cs" />
+    <Compile Include="Amazon\AmazonAlbumTrack.cs" />
+    <Compile Include="Services\AudioEncoder\AudioEncoder.cs" />
+    <Compile Include="Services\AudioEncoder\IAudioEncoder.cs" />
+    <Compile Include="Services\Burner\Burner.cs" />
+    <Compile Include="Services\Burner\BurnManager.cs" />
+    <Compile Include="Services\Burner\BurnResult.cs" />
+    <Compile Include="Services\Burner\BurnStatus.cs" />
+    <Compile Include="Services\Burner\CapacityType.cs" />
+    <Compile Include="Services\Burner\DeviceHelper.cs" />
+    <Compile Include="Services\Burner\DriveFeatures.cs" />
+    <Compile Include="Services\Burner\EventHelper.cs" />
+    <Compile Include="Services\Burner\IBurnManager.cs" />
+    <Compile Include="Services\Burner\IOpticalDrive.cs" />
+    <Compile Include="Services\Burner\MediaInfo.cs" />
+    <Compile Include="Services\Burner\MediaType.cs" />
+    <Compile Include="Services\Burner\MediaTypeSupport.cs" />
+    <Compile Include="Services\Burner\ProjectType.cs" />
+    <Compile Include="Services\ActionHandler\Action.cs" />
+    <Compile Include="Services\ActionHandler\ActionHandler.cs" />
+    <Compile Include="Common\Comment.cs" />
+    <Compile Include="Common\Frame.cs" />
+    <Compile Include="Common\Lyric.cs" />
+    <Compile Include="Common\Picture.cs" />
+    <Compile Include="Common\PopmFrame.cs" />
+    <Compile Include="Common\ReadOnlyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\ReadOnlyDialog.Designer.cs">
+      <DependentUpon>ReadOnlyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Track.cs" />
+    <Compile Include="Common\TrackDataPreview.cs" />
+    <Compile Include="Controls\Colorslider\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Colorslider\ColorSlider.designer.cs">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatagridViewCheckBoxHeaderCell.cs" />
+    <Compile Include="Controls\DataGridViewProgressColumn.cs" />
+    <Compile Include="Controls\CollapsibleSplitter\CollapsibleSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridViewRatingColumn.cs" />
+    <Compile Include="Controls\ExtendedPanel\ExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\ExtendedPanel.designer.cs">
+      <DependentUpon>ExtendedPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\Helpers\BufferPaintingCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\Helpers\CaptionCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\Helpers\CaptionDraggingEventArgs.cs" />
+    <Compile Include="Controls\ExtendedPanel\Helpers\ChangeStyleEventArgs.cs" />
+    <Compile Include="Controls\ExtendedPanel\Helpers\CollapseAnimation.cs" />
+    <Compile Include="Controls\ExtendedPanel\Helpers\CornerCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\Helpers\DirectionCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPanel\Helpers\Enums.cs" />
+    <Compile Include="Controls\ExtendedPanel\Helpers\WIN32Wrapper.cs" />
+    <Compile Include="Controls\MarqueeLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShapedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ShapedForm.designer.cs">
+      <DependentUpon>ShapedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeviewBrowser\FlagsEditor.cs" />
+    <Compile Include="Controls\TreeviewBrowser\TreeViewBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeviewBrowser\TreeViewFolderBrowserDataProvider.cs" />
+    <Compile Include="Controls\TreeviewBrowser\TreeViewFolderBrowserDataProviderMediaPortal.cs" />
+    <Compile Include="Controls\TreeviewBrowser\TreeViewFolderBrowserDataProviderShell32.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeviewBrowser\Win32\Logicaldisk.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeviewBrowser\Win32\Shell32Namespaces.cs" />
+    <Compile Include="Controls\TreeviewBrowser\Win32\SystemImageList.cs" />
+    <Compile Include="Controls\WinControls\MPTCollapsibleSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTComboBox.cs">
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTRadioButton.cs" />
+    <Compile Include="Controls\WinControls\MPTPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTTabPage.cs" />
+    <Compile Include="Controls\WinControls\MPTCheckBox.cs" />
+    <Compile Include="Controls\WinControls\MPTButton.cs">
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTGroupBox.cs">
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTLabel.cs">
+    </Compile>
+    <Compile Include="Controls\WinControls\MPTWinControlsCommon.cs" />
+    <Compile Include="FreeDB\CDInfo.cs" />
+    <Compile Include="FreeDB\CDInfoDetail.cs" />
+    <Compile Include="FreeDB\CDTrackDetail.cs" />
+    <Compile Include="FreeDB\FreeDBQuery.cs" />
+    <Compile Include="FreeDB\FreeDBSite.cs" />
+    <Compile Include="FreeDB\XMCDParser.cs" />
+    <Compile Include="Common\GridViewColumn.cs" />
+    <Compile Include="Common\Item.cs" />
+    <Compile Include="Services\Localisation\ILocalisaton.cs" />
+    <Compile Include="Services\Localisation\LocalisationProvider.cs" />
+    <Compile Include="Services\Localisation\NoLocalisation.cs" />
+    <Compile Include="Services\Localisation\RegionSettings.cs" />
+    <Compile Include="Services\Localisation\StringId.cs" />
+    <Compile Include="Services\Localisation\StringManager.cs" />
+    <Compile Include="Services\Localisation\StringsFile\StringFile.cs" />
+    <Compile Include="Services\Localisation\StringsFile\StringLocalised.cs" />
+    <Compile Include="Services\Localisation\StringsFile\StringSection.cs" />
+    <Compile Include="Services\Logger\FileLogger.cs" />
+    <Compile Include="Services\Logger\ILogger.cs" />
+    <Compile Include="Services\Logger\NoLogger.cs" />
+    <Compile Include="Services\Messaging\IMessageBroker.cs" />
+    <Compile Include="Services\Messaging\IMessageFilter.cs" />
+    <Compile Include="Services\Messaging\IMessageQueue.cs" />
+    <Compile Include="Services\Messaging\MessageBroker.cs" />
+    <Compile Include="Services\Messaging\NoMessageBroker.cs" />
+    <Compile Include="Services\Messaging\Queue.cs" />
+    <Compile Include="Services\Messaging\QueueMessage.cs" />
+    <Compile Include="MusicBrainz\MusicBrainzAlbumInfo.cs" />
+    <Compile Include="MusicBrainz\MusicBrainzAlbum.cs" />
+    <Compile Include="MusicBrainz\MusicBrainzTrack.cs" />
+    <Compile Include="MusicBrainz\MusicBrainzTrackInfo.cs" />
+    <Compile Include="MusicBrainz\NativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PropertyComparer.cs" />
+    <Compile Include="Services\MediaChangeMonitor\DeviceVolumeMonitor.cs" />
+    <Compile Include="Services\MediaChangeMonitor\IMediaChangeMonitor.cs" />
+    <Compile Include="Services\MediaChangeMonitor\MediaChangeMonitor.cs" />
+    <Compile Include="Services\ScriptManager\IScript.cs" />
+    <Compile Include="Services\ScriptManager\IScriptManager.cs" />
+    <Compile Include="Services\ScriptManager\ScriptManager.cs" />
+    <Compile Include="Services\ServiceCreatorCallback.cs" />
+    <Compile Include="Services\ServiceNotFoundException.cs" />
+    <Compile Include="Services\ServiceScope.cs" />
+    <Compile Include="Services\SettingsManager\INamedSettings.cs" />
+    <Compile Include="Services\SettingsManager\ISettingsManager.cs" />
+    <Compile Include="Services\SettingsManager\NoSettingsManager.cs" />
+    <Compile Include="Services\SettingsManager\ObjectParser.cs" />
+    <Compile Include="Services\SettingsManager\SettingAttribute.cs" />
+    <Compile Include="Services\SettingsManager\SettingsManager.cs" />
+    <Compile Include="Services\SettingsManager\XmlNoNamespaceWriter.cs" />
+    <Compile Include="Services\SettingsManager\XmlSettingsProvider.cs" />
+    <Compile Include="Settings\CaseConversionSettings.cs" />
+    <Compile Include="Settings\OrganiseFormatSettings.cs" />
+    <Compile Include="Settings\ParameterFormat.cs" />
+    <Compile Include="Settings\TagToFileNameFormatSettings.cs" />
+    <Compile Include="Settings\FileNameToTagFormatSettings.cs" />
+    <Compile Include="Settings\Options.cs" />
+    <Compile Include="Settings\MPTagThatSettings.cs" />
+    <Compile Include="Common\SortableBindingList.cs" />
+    <Compile Include="Settings\TreeViewFilterSettings.cs" />
+    <Compile Include="ShellLib\ApplicationDesktopToolbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShellLib\FilterByExtension.cs" />
+    <Compile Include="ShellLib\IACList.cs" />
+    <Compile Include="ShellLib\IACList2.cs" />
+    <Compile Include="ShellLib\IAutoComplete.cs" />
+    <Compile Include="ShellLib\IAutoComplete2.cs" />
+    <Compile Include="ShellLib\ICurrentWorkingDirectory.cs" />
+    <Compile Include="ShellLib\IFolderFilter.cs" />
+    <Compile Include="ShellLib\IFolderFilterSite.cs" />
+    <Compile Include="ShellLib\IMalloc.cs" />
+    <Compile Include="ShellLib\IObjMgr.cs" />
+    <Compile Include="ShellLib\IShellFolder.cs" />
+    <Compile Include="ShellLib\ShellAddRecent.cs" />
+    <Compile Include="ShellLib\ShellApi.cs" />
+    <Compile Include="ShellLib\ShellAutoComplete.cs" />
+    <Compile Include="ShellLib\ShellBrowseForFolderDialog.cs" />
+    <Compile Include="ShellLib\ShellExecute.cs" />
+    <Compile Include="ShellLib\ShellFileOperation.cs" />
+    <Compile Include="ShellLib\ShellFunctions.cs" />
+    <Compile Include="ShellLib\ShellGUIDs.cs" />
+    <Compile Include="ShellLib\SourceCustomList.cs" />
+    <Compile Include="Services\ThemeManager\IThemeManager.cs" />
+    <Compile Include="Services\ThemeManager\NoThemeManager.cs" />
+    <Compile Include="Services\ThemeManager\Theme.cs" />
+    <Compile Include="Services\ThemeManager\ThemeManager.cs" />
+    <Compile Include="Common\TrackData.cs" />
+    <Compile Include="Utils\CallingMethod.cs" />
+    <Compile Include="Utils\MP3Val.cs" />
+    <Compile Include="Utils\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\ReadOnlyDialog.resx">
+      <DependentUpon>ReadOnlyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Colorslider\ColorSlider.resx">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExtendedPanel\ExtendedPanel.resx">
+      <DependentUpon>ExtendedPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TreeviewBrowser\Win32\Logicaldisk.resx">
+      <DependentUpon>Logicaldisk.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShellLib\ApplicationDesktopToolbar.resx">
+      <DependentUpon>ApplicationDesktopToolbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starhot4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeImage\FreeImage.csproj">
+      <Project>{6598A7CD-8F27-4D3F-A675-5AE63113A7C3}</Project>
+      <Name>FreeImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\taglib-sharp\taglib-sharp.csproj">
+      <Project>{6B143A39-C7B2-4743-9917-92262C60E9A6}</Project>
+      <Name>taglib-sharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

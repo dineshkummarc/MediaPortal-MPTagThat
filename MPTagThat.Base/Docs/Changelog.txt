@@ -1,0 +1,286 @@
+Changelog
+---------
+
+Legend:
+-------
++ Added
+- Deleted
+x Fixed
+
+3.0.5 Date: 08.01.2012 
+-------------------------------------
++ GUI: Added Picture dimensions to the Thumbs title in the Non-Music File section
++ General: Using FreeImage to Create and Resize the Non-Music Files Thumbs
++ GUI: Added "Unknown" Fileicon to be displayed, when a non-music file extension is not found
++ General: Use FreeImage to create Pictures instead of Windows Image. should prevent Exceptions
++ Scripts: Script to change the Picture Description in Songs to "Front Cover" so that iTunes will recognise it
+x TagEdit: Copy (Ctrl+C) didn't work for the text fields in the Tagedit control
+x Settings: Radio Buttons in ID3 Settings, were not working correct
+x Catch OutOfMemoryException in case of an invalid picture
+
+3.0.4 Date: 23.11.2011 
+-------------------------------------
+x Cover: under some circumstances a Cover was added twice to a file
+x Cover: Set Description of added Cover to "Front Cover" so that it is recognized by iTunes / iPod
++ TagEdit: Added Vertical Scrollbar capabilities to TagEdit Control
+
+3.0.3 Date: 02.11.2011 
+-------------------------------------
+x Tagedit: Prevent Null value assignment to tag values when editing in Grid
+x Cover Art: Amazon changed API, so an additional parm in the request is necessary
+
+3.0.2 Date: 16.10.2011 
+-------------------------------------
+x Tagedit: Edit of Non-MP3 file caused an error
+x TagEdit: Prevented an error when emptying a title directly in the Grid
+x General: Set Focus when opening Dialogs in the Detail pane, so that the defaultz button actions are used.
+
+3.0.1 Date: 07.10.2011 
+-------------------------------------
+x General: Performance improvement for startup. Don't access CD Drives during startup
++ Tagedit: Added a Warning icon to the User defined Tab, when user defined frames are found
++ Tagedit: Added a button to remove all use defined frames
+x Tagedit: Remove empty Lyrics and Rating tags
+x Tagedit: Better Error Handling for Non Standard Frames
+x Tagedit: Better Error handling, when reading tags
+x Tagedit: Save was always creating a Lyrics and a Rating frame by mistake
+x Tagedit: Exception, when a file contained user defined frames with  empty data
+x Rip: Last Track from FreeDB Query wasn't checked automatically for ripping
+x Rip: When changing a CD, while in Rip View, the view was not refreshed
+x Rip: Corrected Timeout in FreeDB Query
+x Rip: Cancel Ripping was not working correctly
++ Settings: Added Option to ID3 Settings, which allows removing of user defined frames automatically on save
+
+3.0.0 Date: 18.09.2011 
+-------------------------------------
++ GUI: Complete redesign of GUI
++ GUI: Added Find / Replace to Ribbon
++ GUI: Show a symbol for changed tracks, as the color for changed rows can't be seen, when all rows are selecteed
++ General: .Net 4.0 now required
++ General: Setup will now uninstall previous version before installing new version
++ General: Added "Cancel ALl" Button to Cover Search dialog
++ TagEdit: Added a button, which copies content of Artist to AlbumArtist
++ TagEdit: Allow changing of Type and Desc of an existing Picture
++ TagEdit: Organise uses now no longer just only the filename as target, but will allow to fully qualify the format of the filename
++ TagEdit: Added Ribbon for Validate / Fix MP3 Songs
++ TagEdit: Added re-search dialog, if nothing is found or wrong album displayed
++ TagEdit: Cash retrieved covers, so that the user isn't asked multiple times on Cover Search
++ TagEdit: Allow Lyrics Search, when Multiple Songs are selected
++ TagEdit: 0003495: Ability to store Cover Art only in folder thumb and don't touch the Music File
++ TagEdit: 0003496: Reset the Number count in the ribbon to 1 after folder change
++ TagEdit: 0003488: Better handling of Read-only files
++ TagEdit: 0003479: User may change Text Encoding for MP3 files
++ TagEdit:0003518: Setting to display TagEdit Details in Top or Bottom Panel
+x General: Handle exceptions when loading Main Menu. The splash screen sometimes kept open without any further reaction
+x General: Further Performance Improvement on Folder Scan
+
+2.0.4034 Build 35136 Date: 17.01.2011 
+-------------------------------------
+x General: Don't save folder.jpg as hidden
++ General: Implemented sorting of Grid on Multiple columns
+x Rip: Enable Rip buttons on program startup, if a CD is present in drive
+x Rip: Prevent failure, when RIP button is pressed, without a CD drive selected in the Treeview
+x Rip: Don't block User interface while Ripping
+x Rip: Set Wait Cursor while querying FreeDB
+x Rip: Capture Timeout on FreeDB query and write meaningful Message
+x Rip: Fixed error when ripping single tracks and the first one is omited
+x Rip: Ribbon ComboBox entry for the Last used encoder for Ripping was not set correctly
+x Conversion: Don't block User Interface during Conversion
+
+2.0.4014 Build 22365 Date: 28.12.2010 
+-------------------------------------
+x Lyrics: Updated LyricsEngine to 1.5.5.0
+x Encoding: FAAC is now used for AAC encoding instead of Winamp aacplus.
+x Encoding: WMA Lossless Ripping / Conversion was not working correctly
+x Encoding: Progress Counter for Conversion was not updated
+x Ribbon: Upgrading Ribbon Component to Version 3.8
+x Ribbon: Zooming of Gallery Item no longer worked after ribbon upgrade
+x Ribbon: Added some separators in Ribbon
+x General: Color was not correctly reset, when hovering in Treeview
+x General: Enable / Disable the Buttons on Rip and Burn Page, when a media is inserted / removed
+x General: Make controls use the Themes
+x General: Some controls were missing translations
+
+2.0.3987 Build 39202 Date: 01.12.2010 
+-------------------------------------
+x New version of BASS libs. Should fix problems, some user have
+
+2.0.3960 Build 40336 Date: 04.11.2010 
+-------------------------------------
++ Changed Logging to NLog. This allows to keep the last 10 log files available amongst other comfortable logging methods.
++ Display progress count besides the progress bar
++ Updated Norwegian strings - Thanks again Roy
++ Ribbon: Update "Recent Folders" List in the ribbon Application menu on a folder change
+x Selecting a CD/DVD drive in Treeview with no media inserted resulted in an error in the log
+x CD/DVD Drive was not detected correctly. This caused Rip to fail
+x Waitcursor not reset after a Database Scan finished
+x Wong version displayed on setup
+x Some files and folders have been left over on an uninstall
+x Fixed possiblle exception when reading non-music files
+x Burner: Burning files, which don't conform the CD Specs (44khz, stereo), failed
+x Cover Art in Ribbon was not always cleared correctly on folder change.
+x Fixed crash on OutOfMemoryException, when scanning a very large amount of files with subfolders included
+x The non-music Files area was not always cleared on folder change
+x Fixed crash when processing a non-music file, which has no extension.
+x The SaveAll function got an exception, if not all rows were selected.
+x Ribbon: Save Button had wrong action assigned, causing a dialog to pop up instead of saving changes
+
+2.0.3890 Build 30591 Date: 26.08.2010 
+-------------------------------------
++ Implementation of new Ribbon Component
++ Added Context Menu to the Non-Music File Listview, which allows easy renaming of graphic files to folder.jpg
++ Show Non-Music Files when selecting a folder. Allows Renaming / Deleting / opening the non-music file
++ Show WaitCursor for long running actions
++ Added Screentips to the various Buttons in the ribbon
++ Quickedit Control on right Panel side for changing quickly the most used tags
++ Ctrl-F11 toggles the Quickedit Panel
++ Localisation of Splashscreen
++ Added support for KeyTips. i.e. Pressing "Alt" shows the Keytips on the Ribbon Button. Due to a bug in the ribbon component, tghose are not shown for spli buttons
++ Moved Coverart Display / Handling to Ribbon. FileInfo Panel removed.
++ Removed Progress Popup. Progressbar is now in Status Bar
++ Allow 1-digit Disc/Track Numnber on Rename / Organise 
++ Ability to hide the Player, which gives more editing space
+x Changed some default keystrokes so that they will not collide with the "Alt+<key>" shortcut supplied by the ribbon
+x Bring Form to front after startup
+x Check for valid screen position and screen size before setting it from Config. Sometimes the screen wasn't shown because of invalid coordinates
+x On first use the Scripts Combo Box was not populated. Use standard script for switching artists.
+x Database Search: Wrong default Filter being used
+x TagEdit: Clicking on the same link in the Navigation pane of the Single / Multi Tagedit Dialog causes the Detail page to be hidden
+x Preferences: Changing a Theme and cancelling out of the dialog should restire the old theme
+x Preferences: Theme was not applied correctly to Group Boxes
+x Background color of Rating cell in Tracks grid was not shown correctly.
+x Remember Last Used Script for Single Tag Edit Dialog
+x Various Translations. Thanks to Roy for testing and the norwegian language file
+
+1.1.3582 Build 27754 Date: 22.10.2009 
+-------------------------------------
++ Added support for Network folders View. Views are selectable via Combo Box
++ New Find / Replace function. Reachable via (Ctrl + Alt + F and Ctrl + H). icons still to be done
++ Added support for "Compilation". useful for iTunes / iPod users
+x Update of Lame encoder
+x Upgraded cdrtools to new version
+x Update of Lyricsengine to latest version. Seeklyrics no longer supported, LyricsPlugin site added instead
+
+1.1.3539 Build 36477 Date: 09.09.2009 
+-------------------------------------
++ Scripts can be used on Organise to override target folder
+x Tagging: Requests to Amazon are now signed to comply with the new API
+
+1.1.3489 Build 33914 Date: 21.07.2009 
+-------------------------------------
++ Language: Added Language Tool in the hope to get more translations
++ Language: added Spanish  translation
++ General: MPT can be now invoked from the Explorer Context menu and will read all files of the selected folder
++ Setup: Options to select creation of startup menu, Desktop Shortcut and Explorer Context Menu
++ General: Added new startupparms "/folder=<startupfolder>" and "/portable"
++ Riping: Added Option to Eject CD when finished with Riping
++ Riping: Added Option to select the Target Folder after Riping
++ TreeView: Folders can be renamed by editing the label of the node in the TreeView
+x Language: Added bitrate range to the description of the Lame presets
+x Lyrics: Upgrade of Lyrics Engine
+x TreeView: Folders with the System attribute set to on, where omitted
+x Organise: Translation for "Disc Number" was not used
+x Tagedit: Selection combos for Artist, AlbumArtist and Album where not filled correctly
+x Riping: When a CD is inserted, the Riping View should be displayed automatically
+x Riping: When a CD is inserted, all tracks on the CD should be selected in the Rip View
+x Keys: Changed the default Key map for "Remove all Comments" from F2 to F4, so that F2 can be used for invoking edit within the grid
+x FolderScan. Capture errors reading a file and log the filename
+x Database Search: Searching for multiple fields, e.g. Artist and Title / Album was not working
+x Player: Playback was stopping after the first song of the playlist finished
+x TreeView: Prevent nullref, when filter is added, with no column selected
+
+1.1.3434 Build 16708 Date: 27.05.2009 
+-------------------------------------
+x TagEdit: Saving Tags in Database View, resulted in wrong updates to the Music Database
+x DatabaseScan: Capture Exception, when retrieving files from database and the physical file no longer exists
+x TagEdit: Single Lyrics could not be deleted
+x BASS: Init Bass engine with "No Sound" device, so that Non-player functions, like convert work also on machines without sound card
+
+1.1.3412 Build 36986 Date: 05.05.2009 
+-------------------------------------
++ TreeView: Ability to specify Filters on FileName and Tags (see Wiki for description)
++ Player: Allow saving of playlists with relative pathes
++ Layout: Added "Path" column to the Tracks grid, which is initialy hidden an can be displayed by right-click on the column header and ticking it
++ TagEdit: Made Album a Combobox in MultiTagEdit to allow easier selection of multiple entries
+x General: Don't handle the Delete key, when the grid track has no focus. this allows the use of delete on other controls as well
+x Layout: Moved Status column to be the first column in the GridViewColumns
+x TagEdit: Combo Box for AlbumArtist was not filled correctly
+x TagEdit: Convert coverart in BMP format to jpg when saving folder thumb (folder.jpg)
+
+1.1.3394 Build 13585 Date: 17.04.2009 
+-------------------------------------
++ TagEdit: Added support for AIFF (Audio Interchange File Format) used by Apple iTunes
++ Language: First version of Dutch translation
+x CoverArt: Search on Amazon US and UK did not work due to a wrong URL constructed
+x Burner: fixed various errors in Burning module
+
+
+1.1.3378 Build 37156 Date: 01.04.2009 
+-------------------------------------
++ Ability to Select the Amazon Site for Cover and Album Search
++ TreeView: New Database View allows editing of tracks based on the search on the MediaPortal Database
++ Database: Added the ability to build a new Music Database from Folders
++ New function for MP3 Validation using mp3val. Either set the Option in Settings -> Tags -> ID3 to validate and/or fix mp3 files, while scanning the database or Folders (tough this is slow on network shares).
+  As an alternative use keyboard shortcuts Alt-V (validate) and Alt-F (fix). Couldn't find the right place for Ribbon Buttons
++ Database: new Database Search facility allows searching for songs in MP Music Database.
++ TagEdit: Update MediaPortal Database, while in Database Mode and a changed file is saved
++ TagEdit: Auto Fill "Number of Tracks" on Multiple Tag Edit
+x Updates to various language files
+x Taglib#: Fixed an error, when a mp3 file contained a corrupted COMM frame
+x FileName2Tag: Some special Parameters e.g. starting with a "(" led to the format not being recognized
+x TagEdit: Make the Genre List sorted
+x Lyrics: Upgraded to new version of LyricsEngine and added 2 new Sites
+x FolderScan: Sometimes a hang was experienced, while reading files
+x Tagedit: Lyrics residing in a mp3 APE tag were not shown
+x Player: Removed Prescan from Player to allow faster playback
+x CaseConversion: Tags from the Exception list got the case conversion rules applied by mistake
+
+
+1.0.3370 Build 21270 Date: 24.03.2009 
+-------------------------------------
+x TagEdit: Comments were not removed correctly, if only an ID3V1 comment existed
+x TagEdit: Fixed Tab Order for Artist and AlbumArtist in Multi TagEdit
+x Lyrics: Special national characters in lyrics were not retrieved correctly
+x Internet Lookup: Fixed crash, when lookup returned more songs then selected
+x CoverArt: Search from Ribbon was not working.
+x CoverArt: Detect, if we have a multiple Artist Album and submit only the Album name for the search
++ Internet Lookup: Number the items in the right listbox, so that they can be better matched to the found items
+
+
+1.0.3364 Build 30786 Date: 18.03.2009 
+-------------------------------------
++ Main: added keyboard Shortcut for "Save All" (Ctrl-Shift-S) 
++ MutlTagEdit: Provide a combo box for different Artists / Album Artists to allow easier selection
++ CoverArt: Display file details on search result screen to better identify the album
++ Player: When adding a Song to the playlist and the player is idle, start playing the song
++ TracksGrid: Added "Select All" to context menu
++ TracksGrid: Added "Delete" to the context menu
++ MultiTagEdit: Provide multiple Artists / AlbumArtists in selected songs in combo boxes for easy selection
+x Rip: Crash, when CD-Rom Drive was not selected in the TReeview before Ripping
+x Player: Free the song in the player, when it is saved. 
+x TagEdit: Added WaitCursor while retrieving Cover Art
+x Added more logging information
+
+
+1.0.3352 Build 17767 Date: 06.03.2009 
+-------------------------------------
++ Tagedit: Simplified adding of Pictures. Removed the "Add picture" button.
++ Cover Art Search: Option to indicate that exsiting folder.jpg should be embedded on Cover Art Search
++ Cover Art Search: Option to indicate if existing cover art should be replaced on automatic tagging
++ Lyrics Search: Option to indicate if existing Lyrics should be overwritten on automatic tagging
++ General: Added Drag & Drop support from Grid to Treeview, to copy/move files to different FolderScan
++ General: Added Cut & Paste Support to Treeview to copy / move complete folders (via context menu)
++ General: Added Cut & Paste Support to Grid to copy / move single files between folders (via context menu)
++ Conversion: Use the same settings regarding Filename Parameters as set for Ripping in preferences.
++ Scripts: Added some sample scripts. (Case conversion in Filenames, Conversion of WMP ratings to MPTagThat ratings)
++ Playlist: added support for Loading and Saving Playlist in m3u and pls format
+
+1.0.3345 Build 29007 Date: 27.02.2009
+-------------------------------------
+x Labels were not displayed on US English systems
++ Added Preview Dialogs to "Tag From File", Rename and Organise
++ State of "Scan Subfolders" is saved
+
+1.0.3344 Build 3400 Date: 26.02.2009
+------------------------------------
++ Initial Release
